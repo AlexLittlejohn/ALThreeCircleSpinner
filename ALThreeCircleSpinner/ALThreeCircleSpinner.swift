@@ -8,40 +8,42 @@
 
 import UIKit
 
-class ALThreeCircleSpinner: UIView {
+public class ALThreeCircleSpinner: UIView {
     
     private var stopped: Bool = false
     
     /// true if the loader should be hidden when it is not animating, default = true
-    var hidesWhenStopped: Bool = true
+    public var hidesWhenStopped: Bool = true
     
     /// The color of the loader view
-    var color: UIColor = UIColor.blackColor() {
+    override public var tintColor: UIColor! {
         didSet {
-            for sublayer in layer.sublayers {
-                let _sublayer = sublayer as! CALayer
-                
-                _sublayer.backgroundColor = color.CGColor
+            if let color = tintColor {
+                for sublayer in layer.sublayers {
+                    let _sublayer = sublayer as! CALayer
+                    
+                    _sublayer.backgroundColor = tintColor.CGColor
+                }
             }
         }
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupAnimation(layer, size: frame.size, color: color)
+        setupAnimation(layer, size: frame.size, color: tintColor)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        setupAnimation(layer, size: frame.size, color: color)
+        setupAnimation(layer, size: frame.size, color: tintColor)
     }
     
     /**
     * Start animating the loader view
     */
-    func startAnimating() {
+    public func startAnimating() {
         if !isAnimating() {
             stopped = false
             hidden = false
@@ -53,7 +55,7 @@ class ALThreeCircleSpinner: UIView {
     * Stop animating the loader view
     * if hidesWhenStopped = true then the loader will be hidden as well
     */
-    func stopAnimating() {
+    public func stopAnimating() {
         if isAnimating() {
             if hidesWhenStopped {
                 hidden = true
@@ -66,7 +68,7 @@ class ALThreeCircleSpinner: UIView {
     /**
     * returns true if the loader is animating
     */
-    func isAnimating() -> Bool {
+    public func isAnimating() -> Bool {
         return !stopped
     }
     

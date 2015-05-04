@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(spinner)
-        spinner.color = UIColor.redColor()
+        spinner.tintColor = UIColor.redColor()
         spinner.hidesWhenStopped = false
         
         
