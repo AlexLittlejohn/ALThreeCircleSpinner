@@ -10,7 +10,7 @@ import UIKit
 
 class ALThreeCircleSpinner: UIView {
     
-    private var stopped: Bool = true
+    private var stopped: Bool = false
     
     /// true if the loader should be hidden when it is not animating, default = true
     var hidesWhenStopped: Bool = true
