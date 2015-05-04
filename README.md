@@ -1,6 +1,8 @@
 # ALThreeCircleSpinner
 A pulsing spinner view written in swift
 
+![Image](https://cloud.githubusercontent.com/assets/932822/7451503/ce3265ec-f251-11e4-8b1a-97f30afd9586.jpg)
+
 ### Usage
 
 ```swift
