@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
   spec.name               = "ALThreeCircleSpinner"
-  spec.version            = "1.0.0"
+  spec.version            = "1.0.1"
   spec.summary            = "A pulsing spinner view written in swift"
-  spec.source             = { :git => "https://github.com/AlexLittlejohn/ALThreeCircleSpinner.git", :tag => '1.0.0' }
+  spec.source             = { :git => "https://github.com/AlexLittlejohn/ALThreeCircleSpinner.git", :tag => '1.0.1' }
   spec.requires_arc       = true
   spec.platform           = :ios, "8.0"
   spec.license            = "MIT"
