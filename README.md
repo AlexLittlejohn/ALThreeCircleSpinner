@@ -30,7 +30,7 @@ spinner.startAnimating()
 You can control the color of the spinner using the `color` property and you can set it to stay visible when animation is stopped using the `hidesWhenStopped` property
 
 ## Attribution
-This spinner is based on the work in the (SpinKit)[https://github.com/raymondjavaxx/SpinKit-ObjC] project 
+This spinner is based on the work in the [SpinKit](https://github.com/raymondjavaxx/SpinKit-ObjC) project 
 
 
 ## License
