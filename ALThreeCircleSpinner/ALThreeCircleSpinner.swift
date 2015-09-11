@@ -18,9 +18,9 @@ public class ALThreeCircleSpinner: UIView {
     /// The color of the loader view
     override public var tintColor: UIColor! {
         didSet {
-            if let color = tintColor {
-                for sublayer in layer.sublayers {
-                    let _sublayer = sublayer as! CALayer
+            if let _ = tintColor {
+                for sublayer in layer.sublayers! {
+                    let _sublayer = sublayer
                     
                     _sublayer.backgroundColor = tintColor.CGColor
                 }
@@ -34,7 +34,7 @@ public class ALThreeCircleSpinner: UIView {
         setupAnimation(layer, size: frame.size, color: tintColor)
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         setupAnimation(layer, size: frame.size, color: tintColor)
@@ -92,7 +92,7 @@ public class ALThreeCircleSpinner: UIView {
     private func setupAnimation(layer: CALayer, size: CGSize, color: UIColor) {
         let beginTime = CACurrentMediaTime();
         
-        var offset: CGFloat = size.width / 8;
+        let offset: CGFloat = size.width / 8;
         let circleSize: CGFloat = offset * 2;
         
         for i in 0..<3 {
@@ -115,8 +115,6 @@ public class ALThreeCircleSpinner: UIView {
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             ];
-            
-            NSValue(CATransform3D:CATransform3DMakeScale(0.0, 0.0, 0.0))
             
             anim.values = [
                 NSValue(CATransform3D:CATransform3DMakeScale(0.0, 0.0, 0.0)),
