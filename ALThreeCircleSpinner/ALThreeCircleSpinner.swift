@@ -96,8 +96,12 @@ public class ALThreeCircleSpinner: UIView {
         let circleSize: CGFloat = offset * 2;
         
         for i in 0..<3 {
+            
+            let circleX = CGFloat(i) * 3 * offset
+            let circleY = size.height / 2 - circleSize/2
+            
             let circle = CALayer();
-            circle.frame = CGRectMake(CGFloat(i) * 3 * offset, size.height / 2, circleSize, circleSize);
+            circle.frame = CGRectMake(circleX, circleY, circleSize, circleSize);
             circle.backgroundColor = color.CGColor;
             circle.anchorPoint = CGPointMake(0.5, 0.5);
             circle.cornerRadius = CGRectGetHeight(circle.bounds) * 0.5;
