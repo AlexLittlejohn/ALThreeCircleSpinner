@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         
         toggleLabel.text = "Is Animating"
         toggle.setOn(true, animated: false)
-        toggle.addTarget(self, action: "valueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        toggle.addTarget(self, action: #selector(valueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewWillLayoutSubviews() {
