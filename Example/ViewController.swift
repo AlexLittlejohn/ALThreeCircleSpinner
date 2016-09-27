@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let spinner = ALThreeCircleSpinner(frame: CGRectMake(0, 0, 44, 44))
+    let spinner = ALThreeCircleSpinner(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
 
     
     // example stuff
@@ -21,18 +21,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(spinner)
-        spinner.tintColor = UIColor.redColor()
+        spinner.tintColor = UIColor.red
         spinner.hidesWhenStopped = false
         
         
         // example stuff
-        view.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        view.backgroundColor = UIColor.groupTableViewBackground
         view.addSubview(toggleLabel)
         view.addSubview(toggle)
         
         toggleLabel.text = "Is Animating"
         toggle.setOn(true, animated: false)
-        toggle.addTarget(self, action: #selector(valueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        toggle.addTarget(self, action: #selector(valueChanged(_:)), for: UIControlEvents.valueChanged)
     }
     
     override func viewWillLayoutSubviews() {
@@ -55,12 +55,12 @@ class ViewController: UIViewController {
         let labelY = view.frame.size.height - 100
         let toggleY = labelY + (labelSize.height/2 - toggleSize.height/2)
         
-        toggleLabel.frame = CGRectMake(labelX, labelY, labelSize.width, labelSize.height)
-        toggle.frame = CGRectMake(toggleX, toggleY, toggleSize.width, toggleSize.height)
+        toggleLabel.frame = CGRect(x: labelX, y: labelY, width: labelSize.width, height: labelSize.height)
+        toggle.frame = CGRect(x: toggleX, y: toggleY, width: toggleSize.width, height: toggleSize.height)
     }
     
-    func valueChanged(sender: UISwitch) {
-        if toggle.on {
+    func valueChanged(_ sender: UISwitch) {
+        if toggle.isOn {
             spinner.startAnimating()
         } else {
             spinner.stopAnimating()
