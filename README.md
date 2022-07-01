@@ -1,3 +1,5 @@
+# ⚠️ This project is unmaintained
+
 # ALThreeCircleSpinner
 A pulsing spinner view written in swift
 
